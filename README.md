@@ -1,5 +1,5 @@
-<script src="d3_force_molecule.js"></script>
-<link rel="stylesheet" href="d3_force_molecule.css" type="text/css"></script>
+<script src="https://raw.github.com/hayd/d3_force_molecule/master/d3_force_molecule.js"></script>
+<link rel="stylesheet" href="https://raw.github.com/hayd/d3_force_molecule/master/d3_force_molecule.css" type="text/css"></script>
 
 ## d3_force_molecule
 
