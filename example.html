@@ -5,13 +5,13 @@
   <script src="d3_force_molecule.js"></script>
   <link rel="stylesheet" href="d3_force_molecule.css" type="text/css"></script>
 </head>
+
 <body>
-<span class="water"></span>
-<span class="alanine"></span>
-
-
-Chemical structure visualized using D3.
+  <span class="water"></span>
+  <span class="alanine"></span>
+  <p>Chemical structure visualized using D3.</p>
 </body>
+
 <script type="text/javascript">
   render_molecule(".water", {"molecule":"HHO", "links":[[0, 2], [1, 2]]}, 100, 100);
   render_molecule(".alanine", {"molecule":"CCCNHOOHHHHHH",
@@ -20,4 +20,5 @@ Chemical structure visualized using D3.
                     300, 300);
 
 </script>
+
 </html>

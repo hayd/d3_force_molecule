@@ -1,15 +1,32 @@
+<script src="d3_force_molecule.js"></script>
+<link rel="stylesheet" href="d3_force_molecule.css" type="text/css"></script>
+
 ## d3_force_molecule
 
 We give a javascript function to create a D3 force molecule representation for a provided molecule.
-,
-For example:
+This reuses the work from EvanZ's example: http://www.d3coder.com/2012/07/01/drawing-chemical-structures-with-force-layout/.
 
-HOH -> gives the D3 repr for H20
+For example, to include a diagram for water we first create a div (or span, etc.), say of class "water":
 
-Note: should this work for H20.
+    <div class="water"></div>
 
-Similarly for larger molecules.
+Next we describe the molecule of water by listing the elements, and describing the links between them:
 
-This works in two parts:
+    {"molecule":"HHO", "links":[[0, 2], [1, 2]]}
 
-First, given a repr for a molecule it defines an array of molecules and a list of links between these. Second, given this list it creates the D3 objects. This essentially follows the EvanZ's example: http://www.d3coder.com/2012/07/01/drawing-chemical-structures-with-force-layout/.
+Now call `render_molecule` at the bottom of the page (the last two arguments are the height and width),
+selecting the class water in the usual fashion.
+
+    render_molecule(".water", {"molecule":"HHO", "links":[[0, 2], [1, 2]]}, 200, 200);
+
+The actual div just below this line:
+
+<div class="water"></div>
+
+<script type="text/javascript">
+  render_molecule(".water", {"molecule":"HHO", "links":[[0, 2], [1, 2]]}, 100, 100);
+  render_molecule(".alanine", {"molecule":"CCCNHOOHHHHHH",
+                               "links":[[0, 1], [1, 2], [1, 3], [2, 5], [2, 6], [1, 4],
+                                      [3, 10], [3, 11], [0, 7], [0, 8], [0, 9], [5, 12]]},
+                    200, 200);
+</script>
